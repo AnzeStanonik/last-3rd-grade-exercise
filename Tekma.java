@@ -12,18 +12,18 @@ public class Tekma {
         return uvrstitve.length();
     }*/
 
-    private double[] razvrstitev() {
+    private double razvrstitev(int n) {
         for (int i = 0; i < uvrstitve.length; i++) {
             rezultati[i] = uvrstitve[i].getSkupnicas();
         }
         Arrays.sort(rezultati);
-        return rezultati;
+        return rezultati[n];
     }
 
     public void izpisiUvrstitve() {
         for (int i = 0; i < uvrstitve.length; i++) {
             for (int j = 0; j < uvrstitve.length; j++) {
-                if(rezultati[i] == uvrstitve[j].getSkupnicas()) {
+                if(razvrstitev(i) == uvrstitve[j].getSkupnicas()) {
                     System.out.println(i+1 + ". mesto: " + uvrstitve[j].getPovzetek());
                 }
             }
